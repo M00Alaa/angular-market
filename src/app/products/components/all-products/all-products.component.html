@@ -1,9 +1,7 @@
 <div class="col-md-4 mb-4 ps-16px ms-auto">
-    <select class="form-select py-3" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+    <select class="form-select py-3" (change)="filterCategories($event)">
+        <option value="all">All Categories</option>
+        <option value="{{category}}" *ngFor="let category of categories">{{category}}</option>
     </select>
 </div>
 
