@@ -1,0 +1,53 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    display: grid;
+    // grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -ms-border-radius: 24px;
+    -o-border-radius: 24px;
+    overflow: hidden;
+    padding: 10px 12px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.02);
+        -webkit-transform: scale(1.02);
+        -moz-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+        -o-transform: scale(1.02);
+    }
+
+    img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 16px;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+    }
+}
