@@ -1,0 +1,20 @@
+<div class="card">
+    <div routerLink="{{data.id}}">
+        <img src="{{data.image}}" alt="">
+        <h3 style="height: 70px; overflow-y: hidden;">{{data.title}}</h3>
+        <p style="height: 80px; overflow-y: auto;">{{data.description}}</p>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center">
+        <button class="btn btn-success px-4 text-white" *ngIf="!addButton" (click)="addButton = true">Add to
+            Cart</button>
+
+        <div class="input-group w-50" *ngIf="addButton">
+            <input type="number" class="form-control" aria-describedby="button-addon2" [(ngModel)]="amount">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                (click)="add(); addButton = false">Add</button>
+        </div>
+
+        <p class="btn btn-danger rounded-pill">{{data.price}} LE</p>
+    </div>
+</div>

@@ -13,11 +13,15 @@ export class ProductsService {
     return this.http.get(environment.baseApi + 'products')
   }
 
+  getProductDetails(id: any) {
+    return this.http.get(environment.baseApi + 'products/' + id)
+  }
+
   getAllCategories() {
     return this.http.get(environment.baseApi + 'products/categories')
   }
 
-  getCategoryProducts(categoryName:any) {
+  getCategoryProducts(categoryName: any) {
     return this.http.get(environment.baseApi + `products/category/${categoryName}`)
   }
 }

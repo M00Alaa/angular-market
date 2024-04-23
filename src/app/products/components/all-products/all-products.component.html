@@ -5,16 +5,13 @@
     </select>
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-20px">
+<div class="row row-cols-1 row-cols-md-4 g-20px" *ngIf="!loading">
     <div class="col" *ngFor="let product of products">
-        <div class="card">
-            <img src="{{product.image}}" alt="">
-            <h3 style="height: 70px; overflow-y: hidden;">{{product.title}}</h3>
-            <p style="height: 80px; overflow-y: auto;">{{product.description}}</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-success px-4 text-white ">Add to Cart</button>
-                <p class="btn btn-danger rounded-pill">{{product.price}} LE</p>
-            </div>
-        </div>
+        <app-product [data]="product" (item)="addToCart($event)"></app-product>
     </div>
+</div>
+
+
+<div class="text-center w-100 " *ngIf="loading">
+    <app-spinner></app-spinner>
 </div>
